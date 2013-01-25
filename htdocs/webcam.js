@@ -156,6 +156,11 @@ window.webcam = {
 		this.get_movie()._snap('', this.quality, this.shutter_sound ? 1 : 0, 0 );
 	},
 	
+	freeze_silently: function() {
+		// freeze webcam image without any sound (capture but do not upload)
+		this.get_movie()._snap('', this.quality, 0, 0 );
+	},
+	
 	upload: function(url, callback) {
 		// upload image to server after taking snapshot
 		// specify fully-qualified URL to server API script
